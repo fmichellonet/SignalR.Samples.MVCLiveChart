@@ -9,13 +9,13 @@ namespace MVCLiveChart.Hubs
     {
         private Timer _timer;
 
-        private double _msftPrice = 10.2;
+        private double _fowlerPrice = 10.2;
 
         private double VaryPrice()
         {
             Random rnd = new Random();
-            _msftPrice = _msftPrice + (rnd.Next(-1, 2) * rnd.NextDouble());
-            return _msftPrice;
+            _fowlerPrice = _fowlerPrice + (rnd.Next(-1, 2) * rnd.NextDouble());
+            return _fowlerPrice;
         }
 
         public bool Connect()
@@ -42,7 +42,7 @@ namespace MVCLiveChart.Hubs
 
         public void Send(IEnumerable<SharePrice> sp)
         {
-            Clients.sendSharePrices(Context.ClientId, sp);
+            Clients.drawShareValue(Context.ClientId, sp);
         }
     }
 
