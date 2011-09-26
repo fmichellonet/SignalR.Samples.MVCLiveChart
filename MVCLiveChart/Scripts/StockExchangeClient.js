@@ -1,4 +1,4 @@
-﻿/// <reference path="../../Scripts/jquery-1.6.2.js" />
+﻿/// <reference path="../../Scripts/jquery-1.6.4.js" />
 /// <reference path="../../Scripts/jQuery.tmpl.js" />
 /// <reference path="../../Scripts/jquery.cookie.js" />
 
@@ -72,8 +72,7 @@ $(function () {
 
     var stockExchangeServer = $.connection.stockExchange;
 
-    stockExchangeServer.sendSharePrices = function (id, content) {
-        //console.log(content);
+    stockExchangeServer.drawShareValue = function (id, content) {
 
         if (id != this.Id) {
             return;
